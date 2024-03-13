@@ -271,7 +271,7 @@ function onPieceMove(event) {
               
               if (selectedPiece) selectedPiece.material.emissive.setHex(0x000000);
               selectedPiece = selectedObject;
-              selectedPiece.material.emissive.setHex(0x00FF00);
+              selectedPiece.material.emissive.setRGB(0, 0, 1);
           } else resetSelection();
       } else {
           const newPosition = selectedObject.position.clone();
@@ -464,11 +464,6 @@ function updateTurnText() {
 }
 
 function createStartScreen() {
-  // const startScreen = document.createElement("div");
-  // startScreen.id = "startScreen";
-  // startScreen.style.cssText = "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-align: center; background-color: rgba(0, 0, 0, 0.75); padding: 20px; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); cursor: pointer;";
-  // startScreen.innerHTML = "<p>    START NEW GAME!    </p>";
-  // document.body.appendChild(startScreen);
   const startScreen = document.createElement("div");
   startScreen.id = "startScreen";
   startScreen.style.cssText = "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-align: center; background-color: rgba(0, 0, 0, 0.75); padding: 20px; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); cursor: pointer; background-color: #012642;"; //#007bff
@@ -485,7 +480,7 @@ function createStartScreen() {
       camera.lookAt(0, 1, 0);
 
       // Adjust camera position
-      camera.position.set(0.5, 3, 10);
+      camera.position.set(0.5, 8, 8);
       cameraControls.target.set(0, 1, 0);
       camera.lookAt(0, 1, 0);
 
